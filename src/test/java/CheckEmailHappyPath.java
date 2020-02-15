@@ -6,6 +6,6 @@ public class CheckEmailHappyPath {
     @Test(dataProvider = "AuthenticationHappy", dataProviderClass = DataProviderForEmailsChecking.class)
     public void emailCheck(String email) {
         boolean actualResult = Email.isEmailCorrect(email);
-        Assert.assertTrue(actualResult);
+        Assert.assertTrue(actualResult,"Happy path test failed");
     }
 }
