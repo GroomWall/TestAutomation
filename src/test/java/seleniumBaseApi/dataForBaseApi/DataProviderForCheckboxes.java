@@ -1,10 +1,10 @@
-package seleniumBaseApi;
+package seleniumBaseApi.dataForBaseApi;
 
 import org.testng.annotations.DataProvider;
 
 public class DataProviderForCheckboxes {
-    @DataProvider(name = "CssSelectors")
-    public static Object[][] cssPaths() {
+    @DataProvider(name = "CssSelectorsForCheckboxes")
+    public static Object[][] cssSelectorsForCheckboxes() {
         return new Object[][]{
                 {"#checkbox-1"},
                 {"#checkbox-2"},
@@ -12,8 +12,8 @@ public class DataProviderForCheckboxes {
         };
     }
 
-    @DataProvider(name = "XpathSelectors")
-    public static Object[][] xpathSelectors() {
+    @DataProvider(name = "XpathSelectorsForCheckboxes")
+    public static Object[][] xpathSelectorsForCheckboxes() {
         return new Object[][]{
                 {"//*[@id='checkbox-1']"},
                 {"//*[@id='checkbox-2']"},

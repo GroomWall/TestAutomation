@@ -1,72 +1,49 @@
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import webDriverSettings.WebDriverSettings;
 
 import java.util.Collections;
 
-public class CheckAssertions {
-    private final String exePath = "D:\\JetBrains\\Other\\Drivers\\chromedriver.exe";
+public class CheckAssertions extends WebDriverSettings {
 
     @Test
-    public void test1() {
-        System.setProperty("webdriver.chrome.driver", exePath);
-        WebDriver driver = new ChromeDriver();
+    public void matchOfTitleTestHappyPath() {
         driver.navigate().to("http://google.com");
         Assert.assertEquals("Google", driver.getTitle(), "Title not matching");
     }
 
     @Test
-    public void test2() {
-        WebDriver driver = new ChromeDriver();
+    public void matchOfTitleTestUnhappyPath() {
         driver.navigate().to("http://google.com");
         Assert.assertEquals("Gooooogle", driver.getTitle(), "There is no title with such a name");
     }
 
     @Test
-    public void test3(){
+    public void assertEqualsComparisonTest() {
         String actual = "Hello";
         String expected = "Hi";
-        Assert.assertEquals(actual, expected,"There is no match");
+        Assert.assertEquals(actual, expected, "There is no match");
     }
 
     @Test
-    public void test4(){
-        String actual = "Hello";
-        String expected = "Hi";
-        Assert.assertEquals(actual, expected,"There is no match");
+    public void assertEqualsBooleanComparisonTest() {
+        Assert.assertEquals(true, true, "There is no match");
     }
 
     @Test
-    public void test5(){
-        Boolean actual = true;
-        Boolean expected = false;
-        Assert.assertEquals(actual, expected,"There is no match");
-    }
-
-    @Test
-    public void test6(){
+    public void assertEqualsCollectionsComparisonTest() {
         Object actual = Collections.EMPTY_LIST;
         Object expected = Collections.EMPTY_LIST;
         Assert.assertEquals(actual, expected, "There is no match");
     }
 
     @Test
-    public void test7(){
-        Assert.assertTrue(5 > 3);
+    public void assertTrueImplementationExample() {
+        Assert.assertTrue(true, "The entered expression isn't true");
     }
 
     @Test
-    public void test8(){
-        Assert.assertTrue(5 > 3, "There is no match");
-    }
-    @Test
-    public void test9(){
-        Assert.assertFalse(5 > 3);
-    }
-
-    @Test
-    public void test10(){
-        Assert.assertFalse(5 > 3, "There is no match");
+    public void assertFalseImplementationExample() {
+        Assert.assertFalse(false, "There is no match");
     }
 }

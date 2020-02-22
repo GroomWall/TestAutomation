@@ -1,5 +1,3 @@
-package varargsTest;
-
 public class Company {
     public static void main(String[] args) {
         String siteName = "google.com";

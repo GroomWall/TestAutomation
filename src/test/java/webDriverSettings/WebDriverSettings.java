@@ -1,11 +1,11 @@
-package seleniumBaseApi;
+package webDriverSettings;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class WebDriverSettings {
-    public ChromeDriver driver;
+    protected ChromeDriver driver;
 
     @BeforeTest
     public void setUp() {

@@ -1,8 +1,8 @@
-package seleniumBaseApi;
+package seleniumBaseApi.dataForBaseApi;
 
 import org.testng.annotations.DataProvider;
 
-public class DataProviderForDatapicker {
+public class DataProviderForDatepicker {
     @DataProvider(name = "DatepickerData")
     public static Object[][] datepickerData() {
         return new Object[][]{

@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import seleniumBaseApi.dataForBaseApi.DataProviderForDropdown;
+import webDriverSettings.WebDriverSettings;
 
-public class DropdownTest extends WebDriverSettings {
+public class DropdownNestedElementsClickTest extends WebDriverSettings {
 
-    @Test(dataProvider = "DropdownData", dataProviderClass = DataProviderForDropdown.class)
-    public void dropdownTest(String path, String url) {
+    @Test(dataProvider = "DropdownPathsAndUrls", dataProviderClass = DataProviderForDropdown.class)
+    public void dropdownButtonsUrlVerification(String path, String url) {
         driver.get("https://formy-project.herokuapp.com/dropdown");
         WebElement element = driver.findElement(By.xpath("//*[@id='dropdownMenuButton']"));
         element.click();
