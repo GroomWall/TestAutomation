@@ -3,7 +3,6 @@ package hw2WithPageObjects.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pageObject.PageObject;
 
 public class DropdownPage extends PageObject {
@@ -63,7 +62,7 @@ public class DropdownPage extends PageObject {
         return dropdownMenuButton.isDisplayed();
     }
 
-    public boolean autocompleteVerification(){
+    public boolean autocompleteVerification() {
         dropdownMenuButton.click();
         autocomplete.click();
         String urlExpected = "https://formy-project.herokuapp.com/autocomplete";
@@ -71,7 +70,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean buttonsVerification(){
+    public boolean buttonsVerification() {
         dropdownMenuButton.click();
         buttons.click();
         String urlExpected = "https://formy-project.herokuapp.com/buttons";
@@ -79,7 +78,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean checkboxVerification(){
+    public boolean checkboxVerification() {
         dropdownMenuButton.click();
         checkbox.click();
         String urlExpected = "https://formy-project.herokuapp.com/checkbox";
@@ -88,7 +87,7 @@ public class DropdownPage extends PageObject {
     }
 
 
-    public boolean datepickerVerification(){
+    public boolean datepickerVerification() {
         dropdownMenuButton.click();
         datepicker.click();
         String urlExpected = "https://formy-project.herokuapp.com/datepicker";
@@ -96,7 +95,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean dragAndDropVerification(){
+    public boolean dragAndDropVerification() {
         dropdownMenuButton.click();
         dragAndDrop.click();
         String urlExpected = "https://formy-project.herokuapp.com/dragdrop";
@@ -104,7 +103,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean dropdownVerification(){
+    public boolean dropdownVerification() {
         dropdownMenuButton.click();
         dropDown.click();
         String urlExpected = "https://formy-project.herokuapp.com/dropdown";
@@ -112,7 +111,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean enableAndDisableVerification(){
+    public boolean enableAndDisableVerification() {
         dropdownMenuButton.click();
         enabledAndDisabled.click();
         String urlExpected = "https://formy-project.herokuapp.com/enabled";
@@ -120,7 +119,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean fileUploadVerification(){
+    public boolean fileUploadVerification() {
         dropdownMenuButton.click();
         fileUpload.click();
         String urlExpected = "https://formy-project.herokuapp.com/fileupload";
@@ -128,7 +127,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean fileDownloadVerification(){
+    public boolean fileDownloadVerification() {
         dropdownMenuButton.click();
         fileDownload.click();
         String urlExpected = "https://formy-project.herokuapp.com/filedownload";
@@ -136,7 +135,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean keyAndMouseVerification(){
+    public boolean keyAndMouseVerification() {
         dropdownMenuButton.click();
         keyAndMouse.click();
         String urlExpected = "https://formy-project.herokuapp.com/keypress";
@@ -144,7 +143,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean modalVerification(){
+    public boolean modalVerification() {
         dropdownMenuButton.click();
         modal.click();
         String urlExpected = "https://formy-project.herokuapp.com/modal";
@@ -152,7 +151,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean pageScrollVerification(){
+    public boolean pageScrollVerification() {
         dropdownMenuButton.click();
         pageScroll.click();
         String urlExpected = "https://formy-project.herokuapp.com/scroll";
@@ -160,7 +159,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean radioButtonVerification(){
+    public boolean radioButtonVerification() {
         dropdownMenuButton.click();
         radioButton.click();
         String urlExpected = "https://formy-project.herokuapp.com/radiobutton";
@@ -168,7 +167,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean switchWindowVerification(){
+    public boolean switchWindowVerification() {
         dropdownMenuButton.click();
         switchWindow.click();
         String urlExpected = "https://formy-project.herokuapp.com/switch-window";
@@ -176,7 +175,7 @@ public class DropdownPage extends PageObject {
         return urlExpected.equals(urlActual);
     }
 
-    public boolean completeWebFormVerification(){
+    public boolean completeWebFormVerification() {
         dropdownMenuButton.click();
         completeWebForm.click();
         String urlExpected = "https://formy-project.herokuapp.com/form";
