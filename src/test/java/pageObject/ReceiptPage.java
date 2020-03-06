@@ -17,8 +17,12 @@ public class ReceiptPage extends PageObject {
         return header.isDisplayed();
     }
 
-    public String confirmationHeader(){
+    public String confirmationHeader() {
         return header.getText();
+    }
+
+    public String confirmationUrl() {
+        return driver.getCurrentUrl();
     }
 
 }
