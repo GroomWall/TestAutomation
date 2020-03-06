@@ -1,19 +1,31 @@
 package webDriverSettings;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class WebDriverSettings {
-    protected ChromeDriver driver;
 
-    @BeforeTest
-    public void setUp() {
+    protected static WebDriver driver;
+
+    @BeforeClass
+    public static void setUp() {
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @AfterTest
-    public void autoQuit() {
-        driver.quit();
+    @AfterClass
+    public static void tearDown() {
+        driver.close();
+    }
+
+    @After
+    public void cleanUp() {
+        driver.manage().deleteAllCookies();
     }
 }
