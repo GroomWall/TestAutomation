@@ -13,6 +13,7 @@ public class LinkedInPage extends PageObject {
     private WebElement password;
     @FindBy(xpath = "//button[@class='sign-in-form__submit-btn']")
     private WebElement logInButton;
+
     public LinkedInPage(WebDriver driver) {
         super(driver);
     }
