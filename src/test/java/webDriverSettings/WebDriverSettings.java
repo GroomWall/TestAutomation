@@ -20,7 +20,7 @@ public class WebDriverSettings {
 
     @AfterClass
     public static void tearDown() {
-        driver.close();
+        driver.quit();
     }
 
     @After

@@ -1,7 +1,11 @@
 package hw2WithPageObjects.pageTests;
 
 import hw2WithPageObjects.pageObjects.CompleteWebFormPage;
+import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.ReceiptPage;
 import webDriverSettings.WebDriverSettings;
 
@@ -9,13 +13,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CompleteWebFormTest extends WebDriverSettings {
+    private final String name = "First";
+    private final String lastName = "Last";
+    private final String expectedResultAfterFormWasCompleted = "Thanks for submitting your form";
     @Test
-    public void completeWebFormTest() throws InterruptedException {
+    public void completeWebFormTest() {
         driver.get("https://formy-project.herokuapp.com/form");
         CompleteWebFormPage completeWebFormPage = new CompleteWebFormPage(driver);
         assertTrue(completeWebFormPage.isInitialized());
 
-        completeWebFormPage.enterName("First", "Last");
+        completeWebFormPage.enterName(name, lastName);
         completeWebFormPage.enterJobTitle("Here should be job title");
 
         completeWebFormPage.setCheckbox1();
@@ -23,7 +30,8 @@ public class CompleteWebFormTest extends WebDriverSettings {
 
         ReceiptPage receiptPage = completeWebFormPage.submit();
         assertTrue(receiptPage.isInitialized());
-        Thread.sleep(2000);
-        assertEquals("Thanks for submitting your form", receiptPage.confirmationHeader());
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='alert']")));
+        assertEquals(expectedResultAfterFormWasCompleted, receiptPage.confirmationHeader());
     }
 }
